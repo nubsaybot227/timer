@@ -17,12 +17,15 @@ function start(){
         document.querySelector('.o').innerHTML = a;
         timer = setInterval(() => {
     
-    
+            if(a == 1){
+                soundClick();
+            } 
             if (a > 0){
                 c = 1;
                 --a;
                 document.querySelector('.o').innerHTML = a;
             }
+  
             else{
                 c = 0;
                 a = b;
@@ -31,7 +34,10 @@ function start(){
     
         }, 1000);
     }
-
-
 }
 
+function soundClick() {
+    var audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = 'AlarmBeep.mp3'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+  }
